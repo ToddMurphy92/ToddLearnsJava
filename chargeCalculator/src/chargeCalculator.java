@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -47,6 +48,7 @@ public class chargeCalculator {
         System.out.println("Total cost before rounding: " + costRaw);
 
         // Cost in real currency
+        costRounded = Math.round(costRaw*100.0)/100.0;
         System.out.println("Total to be charged in real currency: $" + costRounded);
 
 
