@@ -35,7 +35,7 @@ public class YouTellMe {
                 printNumber = countNumbers + number;
                 System.out.print(printNumber);
 
-                if (printNumber < number + desiredNumbers){
+                if (printNumber < desiredLines * desiredNumbers){
                     System.out.print(", ");
                 }
             }
