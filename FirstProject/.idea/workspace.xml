@@ -16,7 +16,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GuessTheNumber2.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GuessTheNumber2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GuessTheNumber2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -28,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecretCipher.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SecretCipher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SecretCipher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="146">
+              <caret line="25" column="50" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -261,14 +261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SecretCipher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GuessTheNumber2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -276,6 +268,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SecretCipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="25" column="50" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
