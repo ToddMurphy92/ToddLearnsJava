@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by todd on 24/2/17.
  */
@@ -9,14 +11,16 @@ public class YouTellMe {
         //int countNumbers = 5;
         //int countLines = 5;
         // User Variables
-        int desiredNumbers = 5;
-        int desiredLines = 5;
+        int desiredNumbers = 0;
+        int desiredLines = 0;
         int number = 0;
         int printNumber = 0;
+        //int a = 0;
 
 
         // Get numbers per line
         System.out.println("How many numbers per line would you like to print?");
+        //int desiredLines = a.nextInt():
 
         // Get lines
         System.out.println("How many lines would you like to print?");
