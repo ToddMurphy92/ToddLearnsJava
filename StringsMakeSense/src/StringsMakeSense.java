@@ -17,9 +17,26 @@ public class StringsMakeSense {
                         someSaying.charAt(24) + "\n"
         );
 
+
         for (int i=0; i < 4; i++){
-            System.out.print(someSaying.charAt(i));
+            System.out.println(someSaying.charAt(i));
         }
+
+
+        System.out.println(someSaying.replace("e","x"));
+
+        System.out.println(someSaying.replace("unique","funny"));
+
+        System.out.println(someSaying.indexOf("i"));
+
+        System.out.println(someSaying.lastIndexOf("i"));
+
+        String x = "Exit";
+        System.out.println(x.equalsIgnoreCase("EXIT"));
+
+        String z = "Have 3 extra spaces in this string   ";
+        System.out.println(z.length());
+        System.out.print(z.trim().length());
 
     }
 
