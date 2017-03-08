@@ -4,9 +4,9 @@
 public class Dog {
 
     // attributes
-    String name;
-    String breed;
-    String age;
+    private String name;
+    private String breed;
+    private int age;
     // end attributes
 
     // constructor
@@ -18,7 +18,7 @@ public class Dog {
 
     // method
     public String toString() {
-        return "Name: " + name + "Breed: " + breed + "Age: " + age;
+        return "Name: " + name + " Breed: " + breed + " Age: " + age;
     } // end method toString
 
 
