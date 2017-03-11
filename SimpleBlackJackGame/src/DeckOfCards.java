@@ -8,7 +8,7 @@ public class DeckOfCards {
 
         Card [] cards;
         final int NUM_OF_CARDS = 52;
-        int cardNum = 0; // Position in the deck. When >= cards.length (aka NUM_OF_CARDS) deck is empty.
+        public int cardNum = 0;    // Position in the deck. When >= cards.length (aka NUM_OF_CARDS) deck is empty.
         Random randomNumber = new Random (System.currentTimeMillis()); // Used by shuffle()
 
         public DeckOfCards () { // Creates the deck of cards
@@ -19,8 +19,8 @@ public class DeckOfCards {
                     "Clubs", "Spades", "Hearts", "Diamonds"
             }; // end array suits
 
-            String [] faces = {
-                    "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"
+            int [] faces = {
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13      // Faces represented as Integers
             }; // end array faces
 
 
@@ -39,23 +39,22 @@ public class DeckOfCards {
 
             } // end loop suitCount
 
-        } // end DeckOfCards
+        } // end Constructor - DeckOfCards
 
 
-        public Card deal() { // Deals the top card
+        public Card deal() { // Method - Deals the top card
+
             if (cardNum < cards.length) {               // Checks the deck is not empty
-                return this.cards[cardNum++];           // Deals the card at the top of the deck
+                return cards[cardNum++];           // Deals the card at the top of the deck
             }
             else {
-                return null; // shuffle() will reset cardNum to 0
+                this.shuffle();                         // Shuffles the deck
+                return cards[cardNum++];           // Deals the card at the top of the deck
             }
-
 
         } // end deal()
 
-        public void shuffle() { // Shuffles the deck and resets cardNum (deck position) to 0
-
-
+        public void shuffle() { // Method - Shuffles the deck and resets cardNum (deck position) to 0
 
             for (int i = 0; i < cards.length; i++) {
 
