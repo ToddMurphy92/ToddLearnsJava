@@ -20,7 +20,7 @@ public class Card {
     }
 
     // method
-    public Integer faceValue () {
+    public int faceValue () {
         return face;
     }
 

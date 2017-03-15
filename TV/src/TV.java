@@ -10,11 +10,11 @@ public class TV {
 
 
     // CONSTRUCTOR
-    public TV (int channel, int volume, boolean power) {
+    public TV () {
 
-        this.channel = channel;
-        this.volume = volume;
-        this.power = power;
+        this.channel = 2;
+        this.volume = 10;
+        this.power = false;
 
     }
 

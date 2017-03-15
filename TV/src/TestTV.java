@@ -6,7 +6,7 @@ public class TestTV {
     public static void main (String [] args) {
 
         // Create Samsung TV
-        TV samsung = new TV(6, 0,true);
+        TV samsung = new TV();
 
 
         // Change TV settings
