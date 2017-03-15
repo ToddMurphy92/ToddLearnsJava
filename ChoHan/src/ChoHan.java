@@ -68,8 +68,9 @@ public class ChoHan {
 
         // TO-DO: Fix this for loop below
 
-        for (int i = 0; i < 2; i++) {
-            total = total + dice[i].toInt();
+        for (int i = 0; i < dice.length; i++) {
+            int x = dice[i].toInt();
+            total = total + x;
         }
 
         // Determine if player has won
