@@ -1,0 +1,8 @@
+STEPS
+1. Ask a player for a bet, an int
+2. Play a round of Cho-Han
+3. Report the result with the cumulative winnings or losses (positive or negative int)
+4. Ask if to play again
+
+If player decides to quit report the total number of wins and losses.
+
