@@ -10,7 +10,7 @@ public class ChoHan {
 
     private int winnings;
     private int plays;
-    Dice [] dice;
+    Dice[] dice = new Dice[2];
     String diceDecision = new String();
 
 
@@ -26,12 +26,15 @@ public class ChoHan {
     public void play () { // THIS MUST USE THE DICE CLASS
 
         Scanner input = new Scanner (System.in);
-        this.dice = new Dice[2];
+        this.dice[0] = new Dice();
+        this.dice[1] = new Dice();
         String replayDecision = new String("y");
 
         while (replayDecision.toLowerCase().contains("y") == true) {
 
             ++plays;
+            this.dice[0].roll();
+            this.dice[1].roll();
 
             // Get odd / even decision
             System.out.println("Would you like to use odd or even? Enter 'Odd' or 'Even': ");
@@ -39,15 +42,19 @@ public class ChoHan {
 
             // Roll dice
             // dice[].roll();                  // Test line
-            System.out.println(dice[0]);    // Test line
+            // System.out.println(dice[0]);    // Test line
             //dice[0].roll();                 // Know this will work
             //dice[1].roll();                 // Know this will work
             //System.out.println(dice[0].toInt());    // Compare with test line
 
 
-            // Adjust winnings value
+            // Check if player won and adjust winnings value
             if (this.won() == true) {
                 ++this.winnings;
+                System.out.println("Congrats, you win!");
+            }
+            else {
+                System.out.println("Sorry mate, you lose :(");
             }
 
             // Ask if to play again
@@ -68,8 +75,12 @@ public class ChoHan {
 
         // TO-DO: Fix this for loop below
 
-        for (int i = 0; i < dice.length; i++) {
-            int x = dice[i].toInt();
+        System.out.println("Dice 1 value is :" + this.dice[0].toInt());
+        System.out.println("Dice 2 value is :" + this.dice[1].toInt());
+        System.out.println("Total of both dice is: " + total);
+
+        for (int i = 0; i < this.dice.length; i++) {
+            int x = this.dice[i].toInt();
             total = total + x;
         }
 

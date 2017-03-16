@@ -12,16 +12,16 @@ public class Dice {
     public Dice () {
 
         // TO-DO: Consider creating the dice with a random number rather than 0
-        // this.diceNum = randomNumber.nextInt(6);
-        this.diceNum = 0;
+        this.diceNum = randomNumber.nextInt(6);
+        // this.diceNum = 0;
 
     }
 
     public void roll() { // Roll dice
 
         // TO-DO: Fix later - Set as random number instead of 2
-        //this.diceNum = randomNumber.nextInt(6);
-        this.diceNum = 2;   // Not setting as random number rn for troubleshooting purposes
+        this.diceNum = randomNumber.nextInt(6);
+        //this.diceNum = 2;   // Not setting as random number rn for troubleshooting purposes
 
     }
 
