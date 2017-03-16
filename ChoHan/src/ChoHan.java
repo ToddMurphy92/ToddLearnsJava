@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -5,6 +6,7 @@ import java.util.Scanner;
  */
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class ChoHan {
 
@@ -12,6 +14,7 @@ public class ChoHan {
     private int plays;
     Dice[] dice = new Dice[2];
     String diceDecision = new String();
+    Random randomNumber = new Random (System.currentTimeMillis());
 
 
     // Constructor
@@ -33,8 +36,11 @@ public class ChoHan {
         while (replayDecision.toLowerCase().contains("y") == true) {
 
             ++plays;
+            /*
             this.dice[0].roll();
-            this.dice[1].roll();
+            this.dice[1].roll(); */
+            this.dice[0].diceNum = randomNumber.nextInt(6);
+            this.dice[1].diceNum = randomNumber.nextInt(6);
 
             // Get odd / even decision
             System.out.println("Would you like to use odd or even? Enter 'Odd' or 'Even': ");
@@ -100,7 +106,11 @@ public class ChoHan {
 
     private void reportWinnings() {
 
-        //
+        int losses = this.plays - this.winnings;
+
+        System.out.println("Wins: " + this.winnings);
+        System.out.println("Losses: " + losses);
+        System.out.println("Thanks for playing!");
 
     }
 
