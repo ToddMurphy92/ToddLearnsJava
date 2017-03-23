@@ -1,0 +1,49 @@
+### Mobile Phone
+Describe the public methods, instance variables, private methods, static methods, static variables,
+and/or constructors that you would use to implement the following class.
+
+### Mobile Phone class
+The phone is either on or off, and in-use or not in-use.
+The phone has its own phone number as well as a list of n frequently called numbers.
+The phone can display its own number as well as the list of frequently called numbers.
+You can “speed-dial” a frequently called number by providing an integer in the range 1 through n that
+indexes a stored phone number.
+You can determine whether or not the phone is ringing, and if so, answer the phone.
+If you make a call or answer a call, the phone is in-use.
+You can make a call only if the phone is not in-use.
+You can hang up the phone, and then it is not in-use.
+You can turn the phone on or off. If you turn it off, you also hang up.
+Your phone remembers all numbers that you dial and stores them.
+You can view the list of numbers you have dialled.
+You can redial the most recently called number.
+
+// Classes
+Phone   <Methods>
+        Constructor:     Phone number, speedDial [n],
+        Get methods:
+        Set on/off
+        Set in use / not in use
+        Dial number - only if status is not in use
+            Remember call history
+        Speed dial number (n)
+            Call the dial number class with value n
+        Answer (check if ringing / answer)
+        Hang up (change to not in use)
+        Turn on/off (hang up if turning off)
+        Remember call history (all numbers)
+        Redial (most recently called number)
+
+Contact List (class or array?)
+
+// Attributes
+on/off
+number
+contact list size n
+contacts (array [n])
+speed dial list size n
+speed dial numbers (array [n])
+
+// Method
+- Get number
+- Get contact
+
