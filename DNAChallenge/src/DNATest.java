@@ -5,7 +5,7 @@ public class DNATest {
 
     public static void main (String [] args) {
 
-        String dna1 = "AAA";
+        String dna1 = "BABBA";
         String dna2 = "A";
         int[] dnaMatches;
 
@@ -28,7 +28,10 @@ public class DNATest {
         if (dnaMatches[0] > -1) {
             System.out.print("Matches found at locations: ");
             for (int i = 0; i < dnaMatches.length; i++) {
-                System.out.println(dnaMatches[i] + ", ");
+                System.out.print(dnaMatches[i]);
+                if (i < (dnaMatches.length -1)) {
+                    System.out.print(", ");
+                }
             }
         }
 
@@ -38,7 +41,7 @@ public class DNATest {
         System.out.println();
         System.out.println("### DEBUG - DNATest.java ###");
         System.out.println("Array length: " + dnaMatches.length);
-        System.out.println("Array: " + dnaMatches[0]);
+        System.out.println("Array[0] : " + dnaMatches[0]);
 
 
     }
