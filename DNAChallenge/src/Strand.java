@@ -43,13 +43,14 @@ public class Strand {
             occurrences = 1;
         }
 
-        int[] array = new int[occurrences];
+        int[] array = new int[occurrences];     // Note min array length is 1 even if occurrences not found
         int arrayPosition = 0;
         index = 0;
 
         while (index != -1) {
 
             if (a.indexOf(b, index) > -1) {
+                System.out.println("DEBUG - Adding values to array...");
                 array[arrayPosition] = a.indexOf(b, index);     // Set array[arrayPosition] to position found after 'index'
                 index = (a.indexOf(b, index) + 1);              // Increment index
                 arrayPosition++;                                // Increment arrayPosition
@@ -58,6 +59,7 @@ public class Strand {
             // Sets array[0] to -1 if no occurrences were found
             else if (found == false) {
                 array[0] = -1;
+                index = -1;
             }
             else {
                 index = -1;
@@ -70,7 +72,45 @@ public class Strand {
     }
 
     static public String maxOverlap (String a, String b) {
-        return "Placeholder - Mas Overlap";
+
+        String maxOverlapString = "Placeholder - Max Overlap";
+        int overlap = 0;
+        int offset = 1;
+        String aSub;
+        String bSub;
+
+        System.out.println("DEBUG - a at offset 1: " + a.substring(0, 1));
+        System.out.println("DEBUG - b at offset 1: " + b.substring((b.length()-1), b.length()));
+
+        while (offset < a.length() && offset < b.length()) {
+            System.out.println("DEBUG - Begin while loop...");
+
+            aSub = a.substring(0, offset);
+            bSub = b.substring((b.length()-offset), b.length());
+
+            System.out.println("DEBUG - COMPARING aSub " + aSub + " to bSub " + bSub);
+
+            // if ("Z" == "Z") {
+            if (aSub.equals(bSub)) {
+                System.out.println("DEBUG - Match found - Offset: " + offset);
+                overlap = offset;
+                maxOverlapString = aSub;
+            }
+
+            offset++;
+        }
+
+        if (overlap > 0) {
+            offset = overlap;
+        }
+
+        while (offset < a.length() && offset < b.length()) {
+
+            offset++;
+        }
+
+
+        return maxOverlapString;
     }
 
     static public String longestSubstring (String a, String b) {

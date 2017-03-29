@@ -5,8 +5,8 @@ public class DNATest {
 
     public static void main (String [] args) {
 
-        String dna1 = "BABBA";
-        String dna2 = "A";
+        String dna1 = "ZYXWA";
+        String dna2 = "STUVZ";
         int[] dnaMatches;
 
         dnaMatches = Strand.match(dna1, dna2);
@@ -14,6 +14,8 @@ public class DNATest {
         /**
          * Q1 Solution
          */
+        System.out.println("Q1");
+
         if (dnaMatches[0] > -1) {
             System.out.println("Matches found: " + dnaMatches.length);
         }
@@ -24,6 +26,7 @@ public class DNATest {
         /**
          * Q2 Solution
          */
+        System.out.println("Q2");
 
         if (dnaMatches[0] > -1) {
             System.out.print("Matches found at locations: ");
@@ -34,6 +37,20 @@ public class DNATest {
                 }
             }
         }
+        System.out.println();
+
+        /**
+         * Q3 Solution
+         */
+        System.out.println("Q3");
+        System.out.println("Max overlap: " + Strand.maxOverlap(dna1, dna2));
+
+        /**
+         * Q4
+         */
+        System.out.println("Q4");
+        System.out.println("Max overlap length: " + Strand.maxOverlap(dna1, dna2).length());
+
 
         /**
          * DEBUG CODE
