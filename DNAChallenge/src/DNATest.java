@@ -6,7 +6,7 @@ public class DNATest {
     public static void main (String [] args) {
 
         String dna1 = "ZYXWA";
-        String dna2 = "STUVZ";
+        String dna2 = "WAUVZ";
         int[] dnaMatches;
 
         dnaMatches = Strand.match(dna1, dna2);

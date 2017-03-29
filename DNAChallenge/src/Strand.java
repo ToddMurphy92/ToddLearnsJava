@@ -90,7 +90,6 @@ public class Strand {
 
             System.out.println("DEBUG - COMPARING aSub " + aSub + " to bSub " + bSub);
 
-            // if ("Z" == "Z") {
             if (aSub.equals(bSub)) {
                 System.out.println("DEBUG - Match found - Offset: " + offset);
                 overlap = offset;
@@ -105,6 +104,17 @@ public class Strand {
         }
 
         while (offset < a.length() && offset < b.length()) {
+
+            bSub = b.substring(0, offset);
+            aSub = a.substring((a.length()-offset), a.length());
+
+            System.out.println("DEBUG - COMPARING aSub " + aSub + " to bSub " + bSub);
+
+            // if ("Z" == "Z") {
+            if (bSub.equals(aSub)) {
+                System.out.println("DEBUG - Match found - Offset: " + offset);
+                maxOverlapString = aSub;
+            }
 
             offset++;
         }
