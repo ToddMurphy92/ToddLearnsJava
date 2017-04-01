@@ -123,9 +123,44 @@ public class Strand {
         return maxOverlapString;
     }
 
-    static public String longestSubstring (String a, String b) {
-        return "Placeholder - Longest Substring";
+    static public int[][] createLongestSubstringArray (String a, String b) {
+
+        System.out.println("DEBUG LSSARRAY - Starting Method ...");
+        int array [][] = new int [a.length() + 1][b.length() + 1];
+        System.out.println("DEBUG LSSARRAY b.length: " + b.length());
+
+        for (int i = 0; i < array.length; i++) {          // for each row
+            System.out.println("DEBUG LSSARRAY - Starting for loop i ...");
+            for (int j = 0; j < array[i].length; j++) {      // for each column
+                System.out.println("DEBUG LSSARRAY - Starting for loop j ...");
+                System.out.println("DEBUG LSSARRAY - i : " + i + "   j : " + j);
+                if (i > 0 && j > 0) {                   // Skip first row and first column
+                    if (a.charAt(i - 1) == b.charAt(j - 1)) {
+                        array[i][j] = ( array[i - 1][j - 1] + 1 );
+                    }
+                    else {
+                        array[i][j] = Math.max(array[i - 1][j], array[i][j - 1]);
+                    }
+                }
+            }
+        }
+        System.out.println("DEBUG LSSARRAY - Print array ... ");
+        System.out.println("");
+
+        System.out.println("DEBUG LSSARRAY - Return array ... ");
+        return array;
     }
 
+    static public String printLongestSubstringArray (String a, String b) {
+        return "Placeholder - Longest Substring Array";
+    }
+
+    static public int getLongestSubstringLength (String a, String b) {
+        return 0;
+    }
+
+    static public String getLongestSubstringString (String a, String b) {
+        return "Placeholder - Longest Substring String";
+    }
 
 }

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created by todd on 25/3/17.
  */
@@ -5,8 +7,8 @@ public class DNATest {
 
     public static void main (String [] args) {
 
-        String dna1 = "ZYXWA";
-        String dna2 = "WAUVZ";
+        String dna1 = "GTCGCTTAGAT";
+        String dna2 = "AGTCGTCGTC";
         int[] dnaMatches;
 
         dnaMatches = Strand.match(dna1, dna2);
@@ -46,19 +48,43 @@ public class DNATest {
         System.out.println("Max overlap: " + Strand.maxOverlap(dna1, dna2));
 
         /**
-         * Q4
+         * Q4 / Q5 - Generate Array
          */
         System.out.println("Q4");
+        int q4Array[][] = Strand.createLongestSubstringArray(dna1, dna2);
+        System.out.println();
+        String q4ArrayString = Arrays.deepToString(q4Array);
+
+        /**
+         * Q4 / Q5 - Print Array
+         */
+        for (int i = 1; i < q4ArrayString.length(); i++) {
+            if (q4ArrayString.charAt(i) != ']') {
+                System.out.print(q4ArrayString.charAt(i));
+            }
+            else {
+                System.out.print("]\n");
+                i++;
+                i++;
+            }
+        }
+
+        /**
+         * Q4 - Answer
+         */
+        System.out.println();
+        System.out.println("Q4 Answer - Longest substring: " + q4Array[dna1.length()][dna2.length()]);
 
 
 
         /**
          * DEBUG CODE
-         *
+         */
         System.out.println();
         System.out.println("### DEBUG - DNATest.java ###");
         System.out.println("Array length: " + dnaMatches.length);
-        System.out.println("Array[0] : " + dnaMatches[0]); */
+        System.out.println("dnaMatches[0] : " + dnaMatches[0]);
+        System.out.println("");
 
 
     }
