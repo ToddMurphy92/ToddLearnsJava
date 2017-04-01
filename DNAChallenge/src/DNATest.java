@@ -54,11 +54,11 @@ public class DNATest {
 
         /**
          * DEBUG CODE
-         */
+         *
         System.out.println();
         System.out.println("### DEBUG - DNATest.java ###");
         System.out.println("Array length: " + dnaMatches.length);
-        System.out.println("Array[0] : " + dnaMatches[0]);
+        System.out.println("Array[0] : " + dnaMatches[0]); */
 
 
     }
