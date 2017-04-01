@@ -49,7 +49,7 @@ public class DNATest {
          * Q4
          */
         System.out.println("Q4");
-        System.out.println("Max overlap length: " + Strand.maxOverlap(dna1, dna2).length());
+
 
 
         /**
