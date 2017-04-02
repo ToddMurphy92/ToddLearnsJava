@@ -144,8 +144,6 @@ public class Strand {
                 }
             }
         }
-        System.out.println("DEBUG LSSARRAY - Print array ... ");
-        System.out.println("");
 
         System.out.println("DEBUG LSSARRAY - Return array ... ");
         return array;
