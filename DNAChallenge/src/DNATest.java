@@ -11,12 +11,18 @@ public class DNATest {
         String dna2 = "AGTCGTCGTC";
         int[] dnaMatches;
 
-        dnaMatches = Strand.match(dna1, dna2);
+        /**
+         * Pre-Question Info
+         */
+        System.out.println("dna1: " + dna1);
+        System.out.println("dna2: " + dna2 + "\n");
 
         /**
          * Q1 Solution
          */
         System.out.println("Q1");
+
+        dnaMatches = Strand.match(dna1, dna2);
 
         if (dnaMatches[0] > -1) {
             System.out.println("Matches found: " + dnaMatches.length);
@@ -24,6 +30,8 @@ public class DNATest {
         else {
             System.out.println("No matches found.");
         }
+
+        System.out.println();
 
         /**
          * Q2 Solution
@@ -45,7 +53,7 @@ public class DNATest {
          * Q3 Solution
          */
         System.out.println("Q3");
-        System.out.println("Max overlap: " + Strand.maxOverlap(dna1, dna2));
+        System.out.println("Max overlap: " + Strand.maxOverlap(dna1, dna2) + "\n");
 
         /**
          * Q4 / Q5 - Generate Array
@@ -73,7 +81,21 @@ public class DNATest {
          * Q4 - Answer
          */
         System.out.println();
-        System.out.println("Q4 Answer - Longest substring: " + q4Array[dna1.length()][dna2.length()]);
+        System.out.println("Q4 Answer - Longest substring: " + q4Array[dna1.length()][dna2.length()] + "\n");
+
+        /**
+         * Q5 - Answer
+         */
+        System.out.println("Q5");
+
+        String longestSubstring = Strand.getLongestSubstringString(dna1, dna2);
+
+        System.out.println(longestSubstring);
+
+
+        /**
+         * Q6 - Answer
+         */
 
 
 
@@ -83,8 +105,7 @@ public class DNATest {
         System.out.println();
         System.out.println("### DEBUG - DNATest.java ###");
         System.out.println("Array length: " + dnaMatches.length);
-        System.out.println("dnaMatches[0] : " + dnaMatches[0]);
-        System.out.println("");
+        System.out.println("dnaMatches[0]: " + dnaMatches[0]);
 
 
     }

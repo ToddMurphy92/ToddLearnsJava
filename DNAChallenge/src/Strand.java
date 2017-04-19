@@ -19,7 +19,7 @@ public class Strand {
         // Finds the number of occurrences of b within a. Value occurrences used later to create array size.
         while (index != -1) {
 
-            System.out.println("DEBUG - a.indexOf(b, index): " + a.indexOf(b, index));
+            //System.out.println("DEBUG - a.indexOf(b, index): " + a.indexOf(b, index));
 
             // Runs for each occurrence found
             if (a.indexOf(b, index) > -1) {
@@ -34,12 +34,12 @@ public class Strand {
             }
 
         }
-        System.out.println("DEBUG - Occurrences: " +  occurrences);
-        System.out.println("DEBUG - Found: " + found);
+        //System.out.println("DEBUG - Occurrences: " +  occurrences);
+        //System.out.println("DEBUG - Found: " + found);
 
         // If no occurrences found sets occurrences to 1 (or the code will fail)
         if (found == false) {
-            System.out.println("DEBUG - Changing occurrences to 1...");
+            //System.out.println("DEBUG - Changing occurrences to 1...");
             occurrences = 1;
         }
 
@@ -50,7 +50,7 @@ public class Strand {
         while (index != -1) {
 
             if (a.indexOf(b, index) > -1) {
-                System.out.println("DEBUG - Adding values to array...");
+                //System.out.println("DEBUG - Adding values to array...");
                 array[arrayPosition] = a.indexOf(b, index);     // Set array[arrayPosition] to position found after 'index'
                 index = (a.indexOf(b, index) + 1);              // Increment index
                 arrayPosition++;                                // Increment arrayPosition
@@ -73,7 +73,7 @@ public class Strand {
 
     static public String maxOverlap (String a, String b) {
 
-        String maxOverlapString = "Placeholder - Max Overlap";
+        String maxOverlapString = "";
         int overlap = 0;
         int offset = 1;
         String aSub;
@@ -112,7 +112,7 @@ public class Strand {
 
             // if ("Z" == "Z") {
             if (bSub.equals(aSub)) {
-                System.out.println("DEBUG - Match found - Offset: " + offset);
+                //System.out.println("DEBUG - Match found - Offset: " + offset);
                 maxOverlapString = aSub;
             }
 
@@ -125,15 +125,20 @@ public class Strand {
 
     static public int[][] createLongestSubstringArray (String a, String b) {
 
-        System.out.println("DEBUG LSSARRAY - Starting Method ...");
+        /**
+         * String a corresponds with i
+         * String b corresponds with j
+         */
+
+        //System.out.println("DEBUG LSSARRAY - Starting Method ...");
         int array [][] = new int [a.length() + 1][b.length() + 1];
-        System.out.println("DEBUG LSSARRAY b.length: " + b.length());
+        //System.out.println("DEBUG LSSARRAY b.length: " + b.length());
 
         for (int i = 0; i < array.length; i++) {          // for each row
-            System.out.println("DEBUG LSSARRAY - Starting for loop i ...");
+            //System.out.println("DEBUG LSSARRAY - Starting for loop i ...");
             for (int j = 0; j < array[i].length; j++) {      // for each column
-                System.out.println("DEBUG LSSARRAY - Starting for loop j ...");
-                System.out.println("DEBUG LSSARRAY - i : " + i + "   j : " + j);
+                //System.out.println("DEBUG LSSARRAY - Starting for loop j ...");
+                //System.out.println("DEBUG LSSARRAY - i : " + i + "   j : " + j);
                 if (i > 0 && j > 0) {                   // Skip first row and first column
                     if (a.charAt(i - 1) == b.charAt(j - 1)) {
                         array[i][j] = ( array[i - 1][j - 1] + 1 );
@@ -145,7 +150,7 @@ public class Strand {
             }
         }
 
-        System.out.println("DEBUG LSSARRAY - Return array ... ");
+        //System.out.println("DEBUG LSSARRAY - Return array ... ");
         return array;
     }
 
@@ -158,7 +163,84 @@ public class Strand {
     }
 
     static public String getLongestSubstringString (String a, String b) {
-        return "Placeholder - Longest Substring String";
+
+        /**
+         * So what I want to do...
+         *
+         * Create an empty string.
+         *
+         * Start at bottom right of array.
+         *
+         * If Xmax = Ymax
+         *  Move diagonal (up and left)
+         * Else if X - 1 > Y - 1
+         *  Move to X - 1
+         * Else
+         *  Move to Y - 1
+         *
+         */
+
+        // Create empty string
+        String returnString = "";
+
+        int array[][] = Strand.createLongestSubstringArray(a, b);
+
+        int yMax = array.length;        // y corresponds to i (String a) in the createLongestSubstringArray method
+        int xMax = array[0].length;     // x corresponds to j (String b) in the createLongestSubstringArray method
+
+        int yPosition = yMax;
+        int xPosition = xMax;
+
+        boolean solved = false;
+
+        while (solved == false) {
+            int left = yPosition - 1;
+            int up = xPosition - 1;
+
+            // We subtract -1 here because due to the 0's the actual characters in the array are all
+            // shifted by +1
+            // Look at the print out of the array and you will get what I mean
+            // Or just study how dna sequencing works
+            char yPositionChar = a.charAt(yPosition - 1); // Char on y axis at current yPosition
+            char xPositionChar = b.charAt(xPosition - 1); // Char on x axis at current xPosition
+
+            if (array[yPosition][xPosition] == 0) {
+                solved = true;
+            }
+            else if (yPositionChar == xPositionChar) { // Run if true: string a position y is equal to string b position x
+
+                // Adds the value at this position in the array to the start of our returnString
+                // We add to the start and not the end because we work from the end of the string to the start
+                // Should I use StringBuilder here instead? Need to investigate further
+                returnString = (yPositionChar + returnString);
+
+                // Diagonal position shift
+                xPosition--;
+                yPosition--;
+
+            }
+            else if (array[left][xPosition] > array[yPosition][up]) {
+                yPosition = left;
+            }
+            else {
+                // Remember we are moving the position up if
+                // up > left OR
+                // up == left
+                // In the case of the latter it does not really matter which direction we move -
+                // - as long as we are consistent
+                // But we have to move one way so might as well go up
+                xPosition = up;
+            }
+
+        }
+
+
+        // Debug code
+        System.out.println("DEBUG - xMax: " + xMax);
+        System.out.println("DEBUG - yMax: " + yMax);
+
+        // Return longest substring
+        return returnString;
     }
 
 }
