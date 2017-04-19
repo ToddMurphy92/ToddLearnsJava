@@ -188,31 +188,51 @@ public class Strand {
         int yMax = array.length;        // y corresponds to i (String a) in the createLongestSubstringArray method
         int xMax = array[0].length;     // x corresponds to j (String b) in the createLongestSubstringArray method
 
-        int yPosition = yMax;
-        int xPosition = xMax;
+        int yPosition = yMax - 1;
+        int xPosition = xMax - 1;
 
         boolean solved = false;
 
+        char yPositionChar = 0;
+        char xPositionChar = 0;
+
+        int left = 0;
+        int up = 0;
+
+        int count = 0;
+
         while (solved == false) {
-            int left = yPosition - 1;
-            int up = xPosition - 1;
+            //count++;
+            //System.out.println("DEBUG - loop attempt" + count);
+
+            left = yPosition - 1;
+            up = xPosition - 1;
 
             // We subtract -1 here because due to the 0's the actual characters in the array are all
             // shifted by +1
             // Look at the print out of the array and you will get what I mean
             // Or just study how dna sequencing works
-            char yPositionChar = a.charAt(yPosition - 1); // Char on y axis at current yPosition
-            char xPositionChar = b.charAt(xPosition - 1); // Char on x axis at current xPosition
+            if (yPosition > 0) {
+                yPositionChar = a.charAt(yPosition - 1); // Char on y axis at current yPosition
+            }
+            if (xPosition > 0) {
+                xPositionChar = b.charAt(xPosition - 1); // Char on x axis at current xPosition
+            }
 
             if (array[yPosition][xPosition] == 0) {
                 solved = true;
+                //System.out.println("DEBUG - Solved!!!");
             }
             else if (yPositionChar == xPositionChar) { // Run if true: string a position y is equal to string b position x
+
+                //System.out.print("DEBUG - Adding char to string... Match = ");
 
                 // Adds the value at this position in the array to the start of our returnString
                 // We add to the start and not the end because we work from the end of the string to the start
                 // Should I use StringBuilder here instead? Need to investigate further
                 returnString = (yPositionChar + returnString);
+
+                //System.out.println("DEBUG - " + yPositionChar);
 
                 // Diagonal position shift
                 xPosition--;

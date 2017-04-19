@@ -90,7 +90,7 @@ public class DNATest {
 
         String longestSubstring = Strand.getLongestSubstringString(dna1, dna2);
 
-        System.out.println(longestSubstring);
+        System.out.println("Longest Substring string: " + longestSubstring);
 
 
         /**
