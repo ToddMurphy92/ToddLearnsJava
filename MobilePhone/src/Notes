@@ -38,8 +38,6 @@ Contact List (class or array?)
 // Attributes
 on/off
 number
-contact list size n
-contacts (array [n])
 speed dial list size n
 speed dial numbers (array [n])
 

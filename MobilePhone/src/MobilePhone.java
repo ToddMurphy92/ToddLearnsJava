@@ -8,6 +8,8 @@ public class MobilePhone {
     private String selfNumber;  // Number of the phone
     private int speedDialListSize = 0;
     private String speedDialList [];
+    private int lastDialedNumber;
+    private int lastAnsweredNumber;
 
 
     public MobilePhone (String selfNumber, int speedDialListSize) {
@@ -38,6 +40,6 @@ public class MobilePhone {
             this.speedDialList [numPosition] = newSpeedDialNum;
         }
     }
-     
+
 
 }

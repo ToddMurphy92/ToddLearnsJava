@@ -7,7 +7,12 @@ public class DNATest {
 
     public static void main (String [] args) {
 
-        String dna1 = "GTCGCTTAGAT";
+        // GTCGCTTAGAT
+        // AGTCGTCGTC
+        // ACCTTAAGGT
+
+
+        String dna1 = "ACCTTAAGGT";
         String dna2 = "AGTCGTCGTC";
         int[] dnaMatches;
 
@@ -20,7 +25,7 @@ public class DNATest {
         /**
          * Q1 Solution
          */
-        System.out.println("Q1");
+        System.out.println("----- Q1 -----");
 
         dnaMatches = Strand.match(dna1, dna2);
 
@@ -28,7 +33,7 @@ public class DNATest {
             System.out.println("Matches found: " + dnaMatches.length);
         }
         else {
-            System.out.println("No matches found.");
+            System.out.println("No matches found");
         }
 
         System.out.println();
@@ -36,7 +41,7 @@ public class DNATest {
         /**
          * Q2 Solution
          */
-        System.out.println("Q2");
+        System.out.println("----- Q2 -----");
 
         if (dnaMatches[0] > -1) {
             System.out.print("Matches found at locations: ");
@@ -47,18 +52,22 @@ public class DNATest {
                 }
             }
         }
+        else {
+            System.out.println("No matches found");
+        }
+
         System.out.println();
 
         /**
          * Q3 Solution
          */
-        System.out.println("Q3");
+        System.out.println("----- Q3 -----");
         System.out.println("Max overlap: " + Strand.maxOverlap(dna1, dna2) + "\n");
 
         /**
          * Q4 / Q5 - Generate Array
          */
-        System.out.println("Q4");
+        System.out.println("----- Q4 -----");
         int q4Array[][] = Strand.createLongestSubstringArray(dna1, dna2);
         System.out.println();
         String q4ArrayString = Arrays.deepToString(q4Array);
@@ -86,7 +95,7 @@ public class DNATest {
         /**
          * Q5 - Answer
          */
-        System.out.println("Q5");
+        System.out.println("----- Q5 -----");
 
         String longestSubstring = Strand.getLongestSubstringString(dna1, dna2);
 
@@ -96,6 +105,23 @@ public class DNATest {
         /**
          * Q6 - Answer
          */
+        System.out.println("\n----- Q6 -----");
+
+        boolean isPalindrome = false;
+
+        // Calculate if A is a palindrome
+
+        isPalindrome = Strand.getIsPalindrome(dna1);
+
+        // run method HERE
+
+        System.out.println("--- Strand 1 ---");
+        if (isPalindrome) {
+            System.out.println("PALINDROME FOUND: True");
+        }
+        else {
+            System.out.println("PALINDROME FOUND: False");
+        }
 
 
 

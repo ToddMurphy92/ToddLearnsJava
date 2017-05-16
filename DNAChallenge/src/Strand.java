@@ -263,4 +263,41 @@ public class Strand {
         return returnString;
     }
 
+    static public boolean getIsPalindrome (String a) {
+
+        boolean isPalindrome = false;
+        String reverseCompliment = "";
+        String tempString = "z";
+
+        for (int i = 0; i < a.length(); i++) {
+
+            if (a.charAt(i) == 'A' ) {
+                tempString = "t";
+            }
+            else if (a.charAt(i) == 'T') {
+                tempString = "a";
+            }
+            else if (a.charAt(i) == 'C') {
+                tempString = "g";
+            }
+            else if (a.charAt(i) == 'G') {
+                tempString = "c";
+            }
+            else {
+                System.out.println("PALINDROME STRING ERROR");
+            }
+
+            reverseCompliment = reverseCompliment + tempString;
+
+        }
+
+        System.out.println("Reverse compliment: " + reverseCompliment);
+
+        if (a == reverseCompliment) {
+            isPalindrome = true;
+        }
+
+        return isPalindrome;
+    }
+
 }
