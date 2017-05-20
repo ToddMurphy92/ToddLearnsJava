@@ -272,28 +272,29 @@ public class Strand {
         for (int i = 0; i < a.length(); i++) {
 
             if (a.charAt(i) == 'A' ) {
-                tempString = "t";
+                tempString = "T";
             }
             else if (a.charAt(i) == 'T') {
-                tempString = "a";
+                tempString = "A";
             }
             else if (a.charAt(i) == 'C') {
-                tempString = "g";
+                tempString = "G";
             }
             else if (a.charAt(i) == 'G') {
-                tempString = "c";
+                tempString = "C";
             }
             else {
                 System.out.println("PALINDROME STRING ERROR");
             }
 
-            reverseCompliment = reverseCompliment + tempString;
+            reverseCompliment = tempString + reverseCompliment;
 
         }
 
-        System.out.println("Reverse compliment: " + reverseCompliment);
+        System.out.println("A                   : " + a);
+        System.out.println("Reverse compliment  : " + reverseCompliment);
 
-        if (a == reverseCompliment) {
+        if (a.equals(reverseCompliment)) {
             isPalindrome = true;
         }
 
